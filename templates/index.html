@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа</title>
+</head>
+<body>
+    <h1>Форма заказа</h1>
+    <form action="/submit" method="post" onsubmit="return validatePhoneNumber()">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="phone_number">Номер телефона:</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="+7(777)777-77-77" required><br><br>
+        <input type="hidden" name="hidden_field" value="test">
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='validate_phone.js') }}"></script>
+</body>
+</html>
